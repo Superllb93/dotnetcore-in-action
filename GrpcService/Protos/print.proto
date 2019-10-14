@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService";
+
+package Print;
+
+// The printing service definition.
+service Printer {
+  // Print a message
+  rpc Echo (stream EchoMessageRequest) returns (stream EchoMessageResponse);
+}
+
+// The request message.
+message EchoMessageRequest {
+  string message = 1;
+}
+
+// The response message.
+message EchoMessageResponse {
+  string message = 1;
+}
